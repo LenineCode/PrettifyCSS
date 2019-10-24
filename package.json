@@ -1,0 +1,23 @@
+{
+  "name": "prettifycss",
+  "version": "1.0.0",
+  "description": "A powerfull css framework",
+  "scripts": {
+    "build": "sass --no-source-map scss/prettify.scss:css/prettify.css",
+    "dev": "sass --no-source-map --watch scss/prettify.scss:css/prettify.css",
+    "start": "serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apinot/PrettifyCSS.git"
+  },
+  "author": "apinot",
+  "bugs": {
+    "url": "https://github.com/apinot/PrettifyCSS/issues"
+  },
+  "homepage": "https://github.com/apinot/PrettifyCSS#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^11.2.0"
+  }
+}

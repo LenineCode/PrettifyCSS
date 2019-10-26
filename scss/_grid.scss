@@ -1,6 +1,7 @@
 
 @mixin grid() {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
@@ -9,15 +10,24 @@
     padding: 0;
 }
 
-@mixin row($nmColumns: 12, $gutterSize: 1.6%){
+@mixin row($nmColumns: 12, $gutterSize: 1.6%, $rowSpacement: 0){
     box-sizing: border-box;
     margin: 0;
+    margin-top: $rowSpacement;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: $gutterSize;
+
+    &:first-of-type {
+        margin-top: 0;
+    }
 }
 
 @mixin col($size){
-    grid-column-end: span $size;
+    grid-column: span $size;
+}
+
+@mixin offset($nbcolumn: 1) {
+    grid-column: span $nbcolumn;
 }

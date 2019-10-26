@@ -1,97 +1,69 @@
 
-@mixin grid() {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import 'mixins/_grid';
 
-@mixin verticalGridBorder($padding) {
-    padding-left: $padding;
-    padding-right: $padding;
-}
-
-@mixin horizontalGridBorder($padding){
-    padding-top: $padding;
-    padding-bottom: $padding;
-}
-
-@mixin gridBorder($border : 'all-none', $guttersize: 1.6%, $rowSpacement) {
-    //vertical and horizontal
-    @if($border == 'all-none') {
-        @include verticalGridBorder(0);
-        @include horizontalGridBorder(0);
+.grid {
+    border: 1px solid black;
+    @include grid();
+    
+    @each $dir in all, horizontal, vertical {
+        @each $padd in none, half, full {
+            &.border-#{$dir}-#{$padd} {
+                @include gridBorder(#{$dir}-#{$padd}, $grid-gutter-size, $grid-rows-spacement);
+            }
+        }
     }
+    
+    .row {
+        @include row($grid-columns-number, $grid-gutter-size, $grid-rows-spacement);
+        
+        &.overflow-collapse {
+            @include rowCollapse();
+        }
+        
+        @for $number from 1 through $grid-columns-number {
+            .s#{$number} {
+                @include col($number);
+            }
+            
+            .offset-s#{$number} {
+                @include offset($number);
+            }
+            
+            .start-s#{$number} {
+                @include startOffset($number);
+            }
+        }
+        
+        @media (min-width: $mq-medium-and-up) {
+            @for $number from 1 through $grid-columns-number {
+                .m#{$number} {
+                    @include col($number);
+                }
+                
+                .offset-m#{$number} {
+                    @include offset($number);
+                }
+                
+                .start-m#{$number} {
+                    @include startOffset($number);
+                }
+            }   
+        }
 
-    @if($border == 'all-half') {
-        @include verticalGridBorder($rowSpacement / 2);
-        @include horizontalGridBorder($guttersize / 2);
+        @media (min-width: $mq-large-and-up) {
+            @for $number from 1 through $grid-columns-number {
+                .l#{$number} {
+                    @include col($number);
+                }
+                
+                .offset-l#{$number} {
+                    @include offset($number);
+                }
+                
+                .start-l#{$number} {
+                    @include startOffset($number);
+                }
+            }   
+        }
     }
-
-    @if($border == 'all-full') {
-        @include verticalGridBorder($rowSpacement);
-        @include horizontalGridBorder($guttersize);
-    }
-
-    //vertical
-    @if($border == 'vertical-none') {
-        @include verticalGridBorder(0);
-    }
-
-    @if($border == 'vertical-half') {
-        @include verticalGridBorder($rowSpacement / 2);
-    }
-
-    @if($border == 'vertical-full') {
-        @include verticalGridBorder($rowSpacement);
-    }
-
-    //horizontal
-    @if($border == 'horizontal-none') {
-        @include horizontalGridBorder(0);
-    }
-
-    @if($border == 'horizontal-half') {
-        @include horizontalGridBorder($guttersize / 2);
-    }
-
-    @if($border == 'horizontal-full') {
-        @include horizontalGridBorder($guttersize);
-    }
-
-}
-
-@mixin row($nbColumns: 12, $gutterSize: 1.6%, $rowSpacement: 0){
-    box-sizing: border-box;
-    margin: 0;
-    margin-top: $rowSpacement;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat($nbColumns, 1fr);
-    column-gap: $gutterSize;
-    row-gap: $rowSpacement;
-
-    &:first-of-type {
-        margin-top: 0;
-    }
-}
-
-@mixin rowCollapse {
-    row-gap: 0;
-}
-
-@mixin col($size: 1){
-    grid-column-end: span $size;
-}
-
-@mixin offset($nbcolumn: 1) {
-    grid-column: span $nbcolumn;
-}
-
-@mixin startOffset($position) {
-    grid-column-start: $position;
 }

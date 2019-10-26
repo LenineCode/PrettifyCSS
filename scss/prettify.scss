@@ -16,6 +16,10 @@
     .row {
         @include row($grid-columns-number, $grid-gutter-size, $grid-rows-spacement);
 
+        &.overflow-collapse {
+            @include rowCollapse();
+        }
+
         @for $number from 1 through $grid-columns-number {
             .s#{$number} {
                 @include col($number);
@@ -23,6 +27,10 @@
 
             .offset-s#{$number} {
                 @include offset($number);
+            }
+
+            .start-s#{$number} {
+                @include startOffset($number);
             }
         }
     }

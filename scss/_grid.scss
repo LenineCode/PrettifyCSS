@@ -73,16 +73,25 @@
     display: grid;
     grid-template-columns: repeat($nbColumns, 1fr);
     column-gap: $gutterSize;
+    row-gap: $rowSpacement;
 
     &:first-of-type {
         margin-top: 0;
     }
 }
 
+@mixin rowCollapse {
+    row-gap: 0;
+}
+
 @mixin col($size: 1){
-    grid-column: span $size;
+    grid-column-end: span $size;
 }
 
 @mixin offset($nbcolumn: 1) {
     grid-column: span $nbcolumn;
+}
+
+@mixin startOffset($position) {
+    grid-column-start: $position;
 }

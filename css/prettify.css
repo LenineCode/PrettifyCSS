@@ -59,79 +59,119 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 1.6%;
+  row-gap: 1em;
 }
 .grid .row:first-of-type {
   margin-top: 0;
 }
+.grid .row.overflow-collapse {
+  row-gap: 0;
+}
 .grid .row .s1 {
-  grid-column: span 1;
+  grid-column-end: span 1;
 }
 .grid .row .offset-s1 {
   grid-column: span 1;
 }
+.grid .row .start-s1 {
+  grid-column-start: 1;
+}
 .grid .row .s2 {
-  grid-column: span 2;
+  grid-column-end: span 2;
 }
 .grid .row .offset-s2 {
   grid-column: span 2;
 }
+.grid .row .start-s2 {
+  grid-column-start: 2;
+}
 .grid .row .s3 {
-  grid-column: span 3;
+  grid-column-end: span 3;
 }
 .grid .row .offset-s3 {
   grid-column: span 3;
 }
+.grid .row .start-s3 {
+  grid-column-start: 3;
+}
 .grid .row .s4 {
-  grid-column: span 4;
+  grid-column-end: span 4;
 }
 .grid .row .offset-s4 {
   grid-column: span 4;
 }
+.grid .row .start-s4 {
+  grid-column-start: 4;
+}
 .grid .row .s5 {
-  grid-column: span 5;
+  grid-column-end: span 5;
 }
 .grid .row .offset-s5 {
   grid-column: span 5;
 }
+.grid .row .start-s5 {
+  grid-column-start: 5;
+}
 .grid .row .s6 {
-  grid-column: span 6;
+  grid-column-end: span 6;
 }
 .grid .row .offset-s6 {
   grid-column: span 6;
 }
+.grid .row .start-s6 {
+  grid-column-start: 6;
+}
 .grid .row .s7 {
-  grid-column: span 7;
+  grid-column-end: span 7;
 }
 .grid .row .offset-s7 {
   grid-column: span 7;
 }
+.grid .row .start-s7 {
+  grid-column-start: 7;
+}
 .grid .row .s8 {
-  grid-column: span 8;
+  grid-column-end: span 8;
 }
 .grid .row .offset-s8 {
   grid-column: span 8;
 }
+.grid .row .start-s8 {
+  grid-column-start: 8;
+}
 .grid .row .s9 {
-  grid-column: span 9;
+  grid-column-end: span 9;
 }
 .grid .row .offset-s9 {
   grid-column: span 9;
 }
+.grid .row .start-s9 {
+  grid-column-start: 9;
+}
 .grid .row .s10 {
-  grid-column: span 10;
+  grid-column-end: span 10;
 }
 .grid .row .offset-s10 {
   grid-column: span 10;
 }
+.grid .row .start-s10 {
+  grid-column-start: 10;
+}
 .grid .row .s11 {
-  grid-column: span 11;
+  grid-column-end: span 11;
 }
 .grid .row .offset-s11 {
   grid-column: span 11;
 }
+.grid .row .start-s11 {
+  grid-column-start: 11;
+}
 .grid .row .s12 {
-  grid-column: span 12;
+  grid-column-end: span 12;
 }
 .grid .row .offset-s12 {
   grid-column: span 12;
+}
+.grid .row .start-s12 {
+  grid-column-start: 12;
 }

@@ -5,5 +5,11 @@
 
     .row {
         @include row();
+
+        @for $size from 1 through 12 {
+            .s#{$size} {
+                @include col($size);
+            }
+        }
     }
 }

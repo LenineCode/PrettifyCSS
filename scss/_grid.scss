@@ -7,14 +7,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 1px solid black;
 }
 
-@mixin row($nmColumns: 12){
+@mixin row($nmColumns: 12, $gutterSize: 1.6%){
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 1px solid red;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    column-gap: $gutterSize;
+}
+
+@mixin col($size){
+    grid-column-end: span $size;
 }

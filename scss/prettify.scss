@@ -1,18 +1,19 @@
+@import '_variables';
 @import '_grid';
 
 .grid {
     @include grid();
 
     .row {
-        @include row(12, 1.6%, 1rem);
+        @include row($grid-columns-number, $grid-gutter-size, $grid-rows-spacement);
 
-        @for $size from 1 through 12 {
-            .s#{$size} {
-                @include col($size);
+        @for $number from 1 through $grid-columns-number {
+            .s#{$number} {
+                @include col($number);
             }
 
-            .offset-#{$size} {
-                @include offset($size);
+            .offset-s#{$number} {
+                @include offset($number);
             }
         }
     }

@@ -2,7 +2,16 @@
 @import '_grid';
 
 .grid {
+    border: 1px solid black;
     @include grid();
+
+    @each $dir in all, horizontal, vertical {
+        @each $padd in none, half, full {
+            &.border-#{$dir}-#{$padd} {
+                @include gridBorder(#{$dir}-#{$padd}, $grid-gutter-size, $grid-rows-spacement);
+            }
+        }
+    }
 
     .row {
         @include row($grid-columns-number, $grid-gutter-size, $grid-rows-spacement);

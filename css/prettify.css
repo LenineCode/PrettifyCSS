@@ -1,4 +1,5 @@
 .grid {
+  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -8,10 +9,52 @@
   margin: 0;
   padding: 0;
 }
+.grid.border-all-none {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.grid.border-all-half {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.8%;
+  padding-bottom: 0.8%;
+}
+.grid.border-all-full {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1.6%;
+  padding-bottom: 1.6%;
+}
+.grid.border-horizontal-none {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.grid.border-horizontal-half {
+  padding-top: 0.8%;
+  padding-bottom: 0.8%;
+}
+.grid.border-horizontal-full {
+  padding-top: 1.6%;
+  padding-bottom: 1.6%;
+}
+.grid.border-vertical-none {
+  padding-left: 0;
+  padding-right: 0;
+}
+.grid.border-vertical-half {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.grid.border-vertical-full {
+  padding-left: 1em;
+  padding-right: 1em;
+}
 .grid .row {
   box-sizing: border-box;
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 1em;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -23,72 +66,72 @@
 .grid .row .s1 {
   grid-column: span 1;
 }
-.grid .row .offset-1 {
+.grid .row .offset-s1 {
   grid-column: span 1;
 }
 .grid .row .s2 {
   grid-column: span 2;
 }
-.grid .row .offset-2 {
+.grid .row .offset-s2 {
   grid-column: span 2;
 }
 .grid .row .s3 {
   grid-column: span 3;
 }
-.grid .row .offset-3 {
+.grid .row .offset-s3 {
   grid-column: span 3;
 }
 .grid .row .s4 {
   grid-column: span 4;
 }
-.grid .row .offset-4 {
+.grid .row .offset-s4 {
   grid-column: span 4;
 }
 .grid .row .s5 {
   grid-column: span 5;
 }
-.grid .row .offset-5 {
+.grid .row .offset-s5 {
   grid-column: span 5;
 }
 .grid .row .s6 {
   grid-column: span 6;
 }
-.grid .row .offset-6 {
+.grid .row .offset-s6 {
   grid-column: span 6;
 }
 .grid .row .s7 {
   grid-column: span 7;
 }
-.grid .row .offset-7 {
+.grid .row .offset-s7 {
   grid-column: span 7;
 }
 .grid .row .s8 {
   grid-column: span 8;
 }
-.grid .row .offset-8 {
+.grid .row .offset-s8 {
   grid-column: span 8;
 }
 .grid .row .s9 {
   grid-column: span 9;
 }
-.grid .row .offset-9 {
+.grid .row .offset-s9 {
   grid-column: span 9;
 }
 .grid .row .s10 {
   grid-column: span 10;
 }
-.grid .row .offset-10 {
+.grid .row .offset-s10 {
   grid-column: span 10;
 }
 .grid .row .s11 {
   grid-column: span 11;
 }
-.grid .row .offset-11 {
+.grid .row .offset-s11 {
   grid-column: span 11;
 }
 .grid .row .s12 {
   grid-column: span 12;
 }
-.grid .row .offset-12 {
+.grid .row .offset-s12 {
   grid-column: span 12;
 }

@@ -4,7 +4,6 @@
   "description": "A powerfull css framework",
   "scripts": {
     "build": "sass --no-source-map scss/prettify.scss:css/prettify.css",
-    "dev": "sass --no-source-map --watch scss/prettify.scss:css/prettify.css",
     "start": "serve ."
   },
   "repository": {

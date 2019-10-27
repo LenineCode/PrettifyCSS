@@ -1,7 +1,7 @@
 # Prettify CSS #
 
 
-## Documentation##
+## Documentation ##
 
 **Table of content**
 - [Grid System](#grid-system)

@@ -12,4 +12,10 @@
             @include buttonVariant('Monospace', transparent,  $color-value,  $color-value, solid, 1px);
         }
     }
+
+    @each $size in small, large, medium {
+        &.btn-#{$size} {
+            @include buttonSizing($size);
+        }
+    }
 }

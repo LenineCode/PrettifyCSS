@@ -1,3 +1,7 @@
+$btn-large: 1.5rem !default;
+$btn-medium: 1rem !default;
+$btn-small: 0.6rem !default;
+
 @mixin buttonStrucure() {
     display: inline-block;
     text-align: center;
@@ -11,9 +15,21 @@
     border-radius: 5px;
 }
 
-@mixin buttonSizing($fontsize: 1rem) {
-    line-height: $btn-line-height;
+@mixin buttonFontSize($fontsize: 1rem) {
+    line-height: $fontsize;
     font-size: $fontsize;
+}
+
+@mixin buttonSizing($size: 'medium') {
+    @if($size == 'medium') {
+        @include buttonFontSize($btn-medium);
+    }
+    @if($size == 'large') {
+        @include buttonFontSize($btn-large);
+    }
+    @if($size == 'small') {
+        @include buttonFontSize($btn-small);       
+    }
 }
 
 @mixin buttonVariant(
@@ -32,13 +48,13 @@ $hoverBorder: lighten($borderColor, 25%))
     color: $textColor;
     background-color: $background;
     border: $borderWidth $borderStyle $borderColor;
-
+    
     &:hover {
         background-color: $hoverBackground;
         color: $hoverColor;
         border-color: $hoverBorder;
     }
-
+    
     transition-property: background-color, color, border-color;
     transition-duration: 250ms;
 }

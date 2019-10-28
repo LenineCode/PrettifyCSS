@@ -411,3 +411,15 @@
   color: #ff8080;
   border-color: #ff8080;
 }
+.btn.btn-small {
+  line-height: 0.6rem;
+  font-size: 0.6rem;
+}
+.btn.btn-large {
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+}
+.btn.btn-medium {
+  line-height: 1rem;
+  font-size: 1rem;
+}

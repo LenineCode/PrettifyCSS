@@ -1,0 +1,15 @@
+@import 'mixins/_button';
+
+.btn {
+    @include buttonStrucure();
+
+    @each $color-name, $color-value in $colors-map{
+        &.color-#{$color-name} {
+            @include buttonVariant('Monospace',  $color-value, white, transparent, solid, 0);
+        }
+
+        &.btn-outline.color-#{$color-name}{
+            @include buttonVariant('Monospace', transparent,  $color-value,  $color-value, solid, 1px);
+        }
+    }
+}

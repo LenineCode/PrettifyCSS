@@ -1,0 +1,44 @@
+@mixin buttonStrucure() {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+@mixin buttonSizing($fontsize: 1rem) {
+    line-height: $btn-line-height;
+    font-size: $fontsize;
+}
+
+@mixin buttonVariant(
+$family: 'Monospace', 
+$background: black, 
+$textColor: white, 
+$borderColor: transparent, 
+$borderStyle: solid, 
+$borderWidth: 1px,
+$hoverColor: lighten($textColor, 25%),
+$hoverBackground: lighten($background, 25%),
+$hoverBorder: lighten($borderColor, 25%))
+{
+    font-family: $family;
+    font-weight: bold;    
+    color: $textColor;
+    background-color: $background;
+    border: $borderWidth $borderStyle $borderColor;
+
+    &:hover {
+        background-color: $hoverBackground;
+        color: $hoverColor;
+        border-color: $hoverBorder;
+    }
+
+    transition-property: background-color, color, border-color;
+    transition-duration: 250ms;
+}

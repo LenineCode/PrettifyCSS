@@ -1,57 +1,3 @@
-.grid {
-  border: 1px solid black;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-.grid.border-all-none {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.grid.border-all-half {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.8%;
-  padding-bottom: 0.8%;
-}
-.grid.border-all-full {
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 1.6%;
-  padding-bottom: 1.6%;
-}
-.grid.border-horizontal-none {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.grid.border-horizontal-half {
-  padding-top: 0.8%;
-  padding-bottom: 0.8%;
-}
-.grid.border-horizontal-full {
-  padding-top: 1.6%;
-  padding-bottom: 1.6%;
-}
-.grid.border-vertical-none {
-  padding-left: 0;
-  padding-right: 0;
-}
-.grid.border-vertical-half {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-.grid.border-vertical-full {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
 .row {
   box-sizing: border-box;
   margin: 0;
@@ -395,4 +341,73 @@
   .row .start-l12 {
     grid-column-start: 12;
   }
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.btn.color-blue {
+  font-family: "Monospace";
+  font-weight: bold;
+  color: white;
+  background-color: blue;
+  border: 0 solid transparent;
+  transition-property: background-color, color, border-color;
+  transition-duration: 250ms;
+}
+.btn.color-blue:hover {
+  background-color: #8080ff;
+  color: white;
+  border-color: rgba(64, 64, 64, 0);
+}
+.btn.btn-outline.color-blue {
+  font-family: "Monospace";
+  font-weight: bold;
+  color: blue;
+  background-color: transparent;
+  border: 1px solid blue;
+  transition-property: background-color, color, border-color;
+  transition-duration: 250ms;
+}
+.btn.btn-outline.color-blue:hover {
+  background-color: rgba(64, 64, 64, 0);
+  color: #8080ff;
+  border-color: #8080ff;
+}
+.btn.color-red {
+  font-family: "Monospace";
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border: 0 solid transparent;
+  transition-property: background-color, color, border-color;
+  transition-duration: 250ms;
+}
+.btn.color-red:hover {
+  background-color: #ff8080;
+  color: white;
+  border-color: rgba(64, 64, 64, 0);
+}
+.btn.btn-outline.color-red {
+  font-family: "Monospace";
+  font-weight: bold;
+  color: red;
+  background-color: transparent;
+  border: 1px solid red;
+  transition-property: background-color, color, border-color;
+  transition-duration: 250ms;
+}
+.btn.btn-outline.color-red:hover {
+  background-color: rgba(64, 64, 64, 0);
+  color: #ff8080;
+  border-color: #ff8080;
 }
